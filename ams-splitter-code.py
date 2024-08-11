@@ -19,16 +19,20 @@ def special_split(file_csv):
     one_to_five = one_to_five[one_to_five['active_mobile_score'] < 5]
     
     five_to_ten = matched_file[matched_file['active_mobile_score'] >= 5]
+    five_to_ten = five_to_ten[five_to_ten['active_mobile_score'] < 10]
+
+    ten = matched_file[matched_file['active_mobile_score'] == 10]
 
     '''Save files'''
     zero_to_one.to_csv('zero_to_one.csv')
     one_to_five.to_csv('one_to_five.csv')
     five_to_ten.to_csv('five_to_ten.csv')
+    ten.to_csv('ten.csv')
     unmatched_file.to_csv('unmatched.csv')
     matched_file.to_csv('matched.csv')
 
     
-    return 'zero_to_one.csv', 'one_to_five.csv', 'five_to_ten.csv', 'unmatched.csv', 'matched.csv'
+    return 'zero_to_one.csv', 'one_to_five.csv', 'five_to_ten.csv', 'ten.csv', 'unmatched.csv', 'matched.csv'
  
     
 
