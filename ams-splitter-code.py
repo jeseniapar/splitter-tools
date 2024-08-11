@@ -39,7 +39,7 @@ def special_split(file_csv):
 interface = gr.Interface(
     fn=special_split,
     inputs=gr.File(label="Upload CSV File"),
-    outputs=[gr.File(label="Zero to One"), gr.File(label="One to Five"), gr.File(label="Five to Ten"), gr.File(label="Unmatched"), gr.File(label="Matched")]
+    outputs=[gr.File(label="Zero to One"), gr.File(label="One to Five"), gr.File(label="Five to Ten"), gr.File(label="Ten"), gr.File(label="Unmatched"), gr.File(label="Matched")]
 )
 
 interface.launch()
